@@ -1,0 +1,16 @@
+<aside class="main-sidebar" xmlns:th="http://www.thymeleaf.org" th:fragment="sidebar">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <div class="sidebar" id="scrollspy">
+
+        <!-- sidebar menu: : style can be found in sidebar.less -->
+        <ul class="nav sidebar-menu">
+            <li class="header">Configuration Dashboard</li>
+            <li><a th:href="@{/configuration-dashboard/schema-admin}">Schema Admin</a></li>
+            <li><a th:href="@{/configuration-dashboard/schema-admin}">Update App Info</a></li>
+            <li><a th:href="@{/configuration-dashboard/schema-admin}">Copy Scrub</a></li>
+            <li><a th:href="@{/configuration-dashboard/update-config}">Update Config</a></li>
+
+        </ul>
+    </div>
+    <!-- /.sidebar -->
+</aside>

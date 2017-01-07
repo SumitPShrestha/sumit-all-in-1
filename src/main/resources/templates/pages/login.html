@@ -1,0 +1,66 @@
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+     th:fragment="content" >
+   <div class="row">
+      <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3" id="login-panel">
+         <form class="reg-page"  th:action="@{/auth/login}" method="post">
+            <div class="reg-header">
+               <h2>Login to your account</h2>
+            </div>
+
+            <div class="input-group margin-bottom-20">
+               <span class="input-group-addon"><i class="fa fa-user"></i></span>
+               <input type="text"
+                      value="user@sumit.com" placeholder="Username" th:name="username" class="form-control"/>
+
+            </div>
+            <div class="input-group margin-bottom-20">
+               <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+               <input type="password" placeholder="Password" th:name="password" value="password" class="form-control"/>
+            </div>
+
+            <div class="row">
+               <div class="col-md-6 checkbox">
+                  <label><input type="checkbox"/> Stay signed in</label>
+               </div>
+               <div class="col-md-3">
+                  <button class="btn-u pull-right" type="submit">Login</button>
+               </div>
+               <div class="col-md-3">
+                  <button class="btn-u pull-right" id="register" type="submit">Register</button>
+               </div>
+            </div>
+
+
+            <h4>Forget your Password ?</h4>
+            <p>no worries, <a class="color-green" id="forgrt-password-link" href="#">click here</a> to reset your password.</p>
+         </form>
+      </div>
+
+      <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3" id="forgot-password-panel">
+         <form class="reg-page"  th:action="@{/auth/forgot-password}" method="post">
+            <div class="reg-header">
+               <h2>Login to your account</h2>
+            </div>
+
+            <div class="input-group margin-bottom-20">
+               <span class="input-group-addon"><i class="fa fa-user"></i></span>
+               <input type="text"
+                      value="user@sumit.com" placeholder="Username" th:name="username" class="form-control"/>
+            </div>
+            <div class="row">
+               <div class="col-md-6 checkbox">
+                  <label><input type="checkbox"/>Send password in my email</label>
+               </div>
+               <div class="col-md-6">
+                  <button class="btn-u pull-right" type="submit">Reset Password</button>
+               </div>
+            </div>
+
+
+            <p><a class="color-green" id="login-link" href="#">Click Here</a> to login.</p>
+         </form>
+      </div>
+   </div>
+
+</div>
+

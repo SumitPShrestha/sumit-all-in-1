@@ -1,0 +1,51 @@
+<div class="row" xmlns:th="http://www.thymeleaf.org" th:fragment="content">
+    <div class="" id="dashboard">
+        <div class="col-md-4 col-sm-6">
+            <a href="#" id="sa-link" th:href="@{/configuration-dashboard/schema-admin}">
+                <div class="service-block service-block-default" id="sa-box">
+                    <span class="letter-icon">S-A</span>
+                    <h2 class="heading-md">Schema Admin</h2>
+                    <p>Module to <span class="bold">Create</span>and <span class="bold">Delete</span> Schema</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-md-4 col-sm-6">
+            <a href="#" th:href="@{/configuration-dashboard/update-app}">
+                <div class="service-block service-block-default" id="ua-box">
+                    <span class="letter-icon">U-A</span>
+                    <h2 class="heading-md">Update App-Info</h2>
+                    <p>Module to <span class="bold">Update Application Info</span></p>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-md-4 col-sm-6">
+            <a href="#" th:href="@{/configuration-dashboard/copy-scrub}">
+                <div class="service-block service-block-default" id="cc-box">
+                    <span class="letter-icon">C-C</span>
+                    <h2 class="heading-md">Copy Scrub</h2>
+                    <p>Module to <span class="bold">Copy Scrub</span></p>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-4 col-sm-6">
+            <a href="#" th:href="@{/configuration-dashboard/update-config}">
+
+                <div class="service-block service-block-default" id="uc-box">
+                    <span class="letter-icon">U-C</span>
+                    <h2 class="heading-md">Copy Scrub</h2>
+                    <p>Module to <span class="bold">Update Configuration</span></p>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+<style>
+    #dashboard {
+        border: 2px solid #3759ff;
+        border-radius: 0;
+        margin: 30px;
+        padding: 30px;
+    }
+</style>

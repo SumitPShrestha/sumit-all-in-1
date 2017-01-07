@@ -1,0 +1,35 @@
+   <div xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+        th:fragment="content" >
+   <div class="row">
+      <div class="col-md-4 col-sm-6">
+         <form class="reg-page"  th:action="@{/login}" method="post">
+            <div class="reg-header">
+               <h2>Create Schema</h2>
+            </div>
+
+               <div class="form-group">
+                  <label for="sel1">Select list:</label>
+                  <select class="form-control" id="sel1">
+
+                  </select>
+               </div>
+            <div class="input-group margin-bottom-20">
+               <span class="input-group-addon">Schema Name</span>
+               <input type="password" placeholder="Password" th:name="password" value="password" class="form-control"/>
+            </div>
+
+            <div class="row">
+               <div class="col-md-6 checkbox">
+               </div>
+               <div class="col-md-6">
+                  <button class="btn-u pull-right" type="submit">Login</button>
+               </div>
+            </div>
+
+
+                   </form>
+      </div>
+   </div>
+
+</div>
+

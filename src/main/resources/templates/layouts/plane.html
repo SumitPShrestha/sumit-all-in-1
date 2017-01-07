@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link th:href="@{/webjars/bootstrap/3.3.6/css/bootstrap.min.css}" rel="stylesheet" media="screen"/>
+    <link th:href="@{/css/core.css}" rel="stylesheet" media="screen"/>
+    <link th:href="@{/css/style.css}" rel="stylesheet" media="screen"/>
+    <link th:href="@{/fontAwesome/css/font-awesome.min.css}" rel="stylesheet" media="screen"/>
+<title>Configuration Dashboard</title>
+</head>
+
+<body>
+<div th:replace="fragments/header :: header">
+</div>
+<div class="wrapper container" style="height: 6000px">
+
+    <div th:replace="${view} :: content">
+        Content
+    </div>
+</div>
+<div th:replace="fragments/footer :: footer">
+    Footer
+</div>
+<script content="application/javascript" th:src="@{/webjars/jquery/2.2.1/jquery.min.js}"></script>
+
+<script content="application/javascript" th:src="@{/webjars/bootstrap/3.3.6/js/bootstrap.min.js}" ></script>
+<script content="application/javascript" th:src="@{/js/docs.js}"></script>
+</body>
+</html>

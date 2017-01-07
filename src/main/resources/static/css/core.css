@@ -1,0 +1,145 @@
+*{
+    border-radius: 0px;
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    background-color: whitesmoke;
+
+}
+
+
+.reg-page {
+    color: #555;
+    padding: 30px;
+    background: #fefefe;
+    border: solid 1px #eee;
+    box-shadow: 0 0 3px #eee;
+}
+
+.reg-header {
+    color: #555;
+    text-align: center;
+    margin-bottom: 35px;
+    border-bottom: solid 1px #eee;
+}
+.margin-bottom-20 {
+    margin-bottom: 20px;
+}
+.reg-page label {
+    color: #777;
+}
+.btn-u {
+    border: 0;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: 400;
+    padding: 6px 13px;
+    position: relative;
+    background: #72c02c;
+    white-space: nowrap;
+    display: inline-block;
+    text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #585f69;
+    margin-top: 5px;
+    text-shadow: none;
+    font-weight: normal;
+    font-family: 'Open Sans', sans-serif;
+}
+h4 {
+    line-height: 25px;
+}
+
+
+
+
+.social-links {
+    max-width: 800px;
+    margin: 0 auto;
+    list-style: none;
+}
+.social-links > li {
+    width: 30%;
+    text-align: center;
+    vertical-align: middle;
+    display: inline-block;
+    margin: auto;
+}
+.navbar {
+    padding-top: 26px;
+    height: 100px;
+    background-color: #00a7d0;
+    border-radius: 0;
+    color: white;
+}
+.navbar-brand{
+    font-size: 30px;
+    margin-top: 15px;
+    text-shadow: none;
+    font-weight: normal;
+    font-family: 'Open Sans', sans-serif;
+}
+.navbar-nav li a{
+    color: white;
+    line-height: 29px;
+    padding: 23px 18px 18px;
+    font-size: 16px;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.navbar-nav{
+    float: none;
+    margin: 0 auto;
+    display: table;
+    table-layout: fixed;
+}
+
+.navbar-nav li a:hover {
+    background-color: transparent;
+    border-bottom: 2px solid #1cff9c;
+}
+
+.navbar-brand {
+    color: wheat;
+    font-size: 3em;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.service-block-light, .service-block-default {
+    background: #fafafa;
+    border: solid 1px #eee;
+}
+.service-block {
+    padding: 20px 30px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+span.letter-icon {
+    background-color: #00a7d0;
+    color: #ffffff;
+    width: 60px;
+    height: 60px;
+    font-size: 25px;
+    line-height: 60px;
+    margin-bottom: 5px;
+    text-align: center;
+    display: inline-block;
+    border-radius: 50%;
+    border: solid 1px #ffffff;
+    font-weight: 600;
+}
+
+h2.heading-md {
+    font-size: 20px;
+    line-height: 24px;
+}
