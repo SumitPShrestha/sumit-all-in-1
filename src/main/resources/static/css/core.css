@@ -143,3 +143,19 @@ h2.heading-md {
     font-size: 20px;
     line-height: 24px;
 }
+
+
+/*Funny Box*/
+/*----###################### Funny Box ###################---------------*/
+.funny-box-blue {
+    background: #00a7d0 ;
+}
+
+.funny-box {
+    overflow: hidden;
+    padding: 15px 20px;
+    margin-bottom: 25px;
+
+}
+
+/*----######################END Funny Box ###################---------------*/

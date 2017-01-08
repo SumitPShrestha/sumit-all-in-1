@@ -1,6 +1,11 @@
 package com.sp.allinone.config.layout;
 
+import com.sp.allinone.utils.AuthUtils;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.authentication.AnonymousAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.util.Assert;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -50,6 +55,16 @@ public class LayoutInterceptor extends HandlerInterceptorAdapter {
 
 
         String layoutName = getLayoutName(handler);
+
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        if (auth!=null && !(auth instanceof AnonymousAuthenticationToken) && auth.getName() != null) {
+            String name = auth.getName();
+            GrantedAuthority highestPrecedenceAuthority = AuthUtils.getHighestPrecidenceAuthority(auth.getAuthorities());
+
+            modelAndView.addObject("highestAuthoritiy",highestPrecedenceAuthority.toString() );
+            modelAndView.addObject("authorities", auth.getAuthorities());
+            modelAndView.addObject("userName", name);
+        }
         modelAndView.setViewName(layoutName);
         modelAndView.addObject("applicationName", applicationName);
         modelAndView.addObject(this.viewAttributeName, originalViewName);

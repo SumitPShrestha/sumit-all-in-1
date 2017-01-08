@@ -5,7 +5,7 @@
 
 <!-- Navbar -->
 <div class="navbar navbar-default mega-menu" th:fragment="header">
-    <div class="container">
+    <div class="container" id="super-admin-panel">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
                 <span class="icon-bar"></span>
@@ -16,7 +16,7 @@
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li><a href="#" th:href="@{/logout}" ></a></li>
+                <li><a href="#" th:href="@{/logout}" th:text="${userName}" ></a></li>
             </ul>
         </div>
         <!--/.nav-collapse -->

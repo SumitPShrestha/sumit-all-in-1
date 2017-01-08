@@ -83,7 +83,7 @@ public class AppAuthenticationSuccessHandeler implements AuthenticationSuccessHa
         }
 
         if (role.equals(Role.ROLE_SUPERADMIN)) {
-            return SUPER_ADMIN_DASHBOARD;
+            return WELCOME_PAGE;
         } else if (role.equals(Role.ROLE_CLIENTADMIN)) {
             return CLIENT_ADMIN_DASHBOARD;
         }else if (role.equals(Role.ROLE_APPADMIN)) {
