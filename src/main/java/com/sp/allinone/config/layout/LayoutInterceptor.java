@@ -61,6 +61,7 @@ public class LayoutInterceptor extends HandlerInterceptorAdapter {
             String name = auth.getName();
             GrantedAuthority highestPrecedenceAuthority = AuthUtils.getHighestPrecidenceAuthority(auth.getAuthorities());
 
+
             modelAndView.addObject("highestAuthoritiy",highestPrecedenceAuthority.toString() );
             modelAndView.addObject("authorities", auth.getAuthorities());
             modelAndView.addObject("userName", name);

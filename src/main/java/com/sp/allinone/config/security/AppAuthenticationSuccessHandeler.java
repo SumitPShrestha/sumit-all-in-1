@@ -32,8 +32,6 @@ import static com.sp.allinone.web.Routes.*;
 @Configuration
 public class AppAuthenticationSuccessHandeler implements AuthenticationSuccessHandler {
 
-    @Autowired
-    UserService userService;
     protected final Log logger = LogFactory.getLog(this.getClass());
 
     private RedirectStrategy redirectStrategy = new DefaultRedirectStrategy();
@@ -61,8 +59,6 @@ public class AppAuthenticationSuccessHandeler implements AuthenticationSuccessHa
     }
 
     private String determineTargetUrl(Authentication authentication) {
-        boolean isUser = false;
-        boolean isAdmin = false;
         List<GrantedAuthority> authorities = (List<GrantedAuthority>) authentication.getAuthorities();
 
         for (final GrantedAuthority grantedAuthority : authorities) {

@@ -1,0 +1,84 @@
+<div class="row" xmlns:th="http://www.thymeleaf.org" th:fragment="content">
+    <div class="" id="welcome-page">
+        <div class="col-md-4 col-sm-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div class="heading">
+                        <h3>Welcome <span class="bold" th:text="${userName}"></span></h3>
+
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <div class="input-group">
+                                <label>Select Application</label>
+                                <select class="form-control">
+                                    <option>--Select Application--</option>
+                                </select>
+                            </div>
+                        </li>
+                        <li class="list-group-item" th:switch="${highestAuthoritiy}">
+                            <a th:href="@{/super-admin-dashboard}" th:case="'ROLE_SUPERADMIN'">
+                                <i class="icon-dashboard">Dashboard</i>
+                            </a>
+                            <a th:href="@{/app-admin-dashboard}" th:case="'ROLE_APPADMIN'">
+                                <i class="icon-dashboard">Dashboard</i>
+                            </a>
+                            <a th:href="@{/client-admin-dashboard}" th:case="'ROLE_CLIENTADMIN'">
+                                <i class="icon-dashboard">Dashboard</i>
+                            </a>
+                            <a th:href="@{/employee-dashboard}" th:case="'ROLE_EMPLOYEE'">
+                                <i class="icon-dashboard">Dashboard</i>
+                            </a>
+                            <a th:href="@{/user-dashboard}" th:case="'ROLE_USER'">
+                                <i class="icon-dashboard">Dashboard</i>
+                            </a>
+
+                        </li>
+                        <li class="list-group-item">Help Page</li>
+                        <li class="list-group-item">TBD</li>
+                        <li class="list-group-item">TBD</li>
+                        <li class="list-group-item">TBD</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-md-8 col-sm-6">
+            <div class="funny-boxes funny-boxes-colored funny-boxes-blue">
+                <div class="row">
+                    <div class="col-md-4 funny-boxes-img">
+                        <ul class="list-unstyled">
+                            <li><i class="fa fa-briefcase"></i> Dell, Google</li>
+                            <li><i class="fa fa-map-marker"></i> New York, US</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-8">
+                        <h2><a href="#">Blue Box</a></h2>
+
+                        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
+                            voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati
+                            cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id
+                            est laborum.</p>
+                        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
+                            voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati
+                            cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id
+                            est laborum.</p>
+                        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
+                            voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati
+                            cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id
+                            est laborum.</p>
+                        <a href="#" class="btn-u btn-u-red">read more</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<style>
+
+</style>
