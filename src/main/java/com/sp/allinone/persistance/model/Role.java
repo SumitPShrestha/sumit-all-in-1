@@ -1,5 +1,7 @@
 package com.sp.allinone.persistance.model;
 
+import com.sp.allinone.common.Model;
+import com.sp.allinone.config.persistance.annotation.Column;
 import com.sp.allinone.config.persistance.annotation.Table;
 
 /**
@@ -7,7 +9,10 @@ import com.sp.allinone.config.persistance.annotation.Table;
  */
 
 @Table(value = "role")
-public class Role {
+public class Role extends Model {
+
+    private String role;
+
     public String getRole() {
         return role;
     }
@@ -16,6 +21,5 @@ public class Role {
         this.role = role;
     }
 
-    private String role;
 
 }

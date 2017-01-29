@@ -13,9 +13,7 @@ import java.util.List;
  */
 public interface DAOBase<T extends Model> {
 
-    T  findOne(Integer id);
 
-    List<T> findAll() throws IllegalAccessException, InstantiationException;
 
     public Class getModelClass();
 

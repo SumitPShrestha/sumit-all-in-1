@@ -19,8 +19,9 @@ public class Routes {
      * User Managemant
      */
 
-    public static final String USER_MANAGEMENT = "/user-managemant";
+    public static final String USER_MANAGEMENT = "/user-management";
     public static final String CREATE_USER = "/create-user";
+    public static final String VIEW_USERS = "/view-users";
     public static final String DELETE_USER = "/delete-user";
     public static final String EDIT_USER = "/edit-user";
 

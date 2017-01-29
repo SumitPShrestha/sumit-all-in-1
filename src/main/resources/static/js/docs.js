@@ -2,6 +2,11 @@
  * Documentation JS script
  */
 $(function () {
+    $('.list-group-item').on('click', function() {
+        $('.glyphicon-chevron-right ,.glyphicon-chevron-down', this)
+            .toggleClass('glyphicon-chevron-right')
+            .toggleClass('glyphicon-chevron-down');
+    });
     var slideToTop = $("<div />");
     slideToTop.html('<i class="fa fa-chevron-up"></i>');
     slideToTop.css({
@@ -84,4 +89,27 @@ $(function () {
     }
 
     /**END Function to hide/show forgot password panel **/
+
+    /*function to show hide client info form in user regestration*/
+    $('#client-info').hide();
+    $('#client-admin').click(function(e) {
+        $('#client-admin').is(':checked') ?
+            toggleClientInfoPanel(true) :
+            toggleClientInfoPanel(false);
+
+        function   toggleClientInfoPanel(display){
+            $('#client-admin').prop('checked', display);
+            display ? $('#client-info').show() : $('#client-info').hide();
+        }
+    });
+    function sohowClientPage() {
+
+
+
+    }
+
+    /* end function to show hide client info form in user regestration*/
+
+
+
 });

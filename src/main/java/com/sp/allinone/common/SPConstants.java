@@ -10,4 +10,6 @@ public class SPConstants {
     public static final String ROLE_SUPER_ADMIN = "ROLE_SUPERADMIN";
     public static final String ROLE_CLIENT_ADMIN = "ROLE_CLIENTADMIN";
     public static final String ROLE_APP_ADMIN = "ROLE_CLIENTADMIN";
+    public static final int INT_INITIALIZATION = -1;
+
 }

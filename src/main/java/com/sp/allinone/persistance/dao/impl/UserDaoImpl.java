@@ -1,6 +1,7 @@
 package com.sp.allinone.persistance.dao.impl;
 
 import com.sp.allinone.common.BasicDAO;
+import com.sp.allinone.common.DataSetParameter;
 import com.sp.allinone.config.persistance.PlatformConfiguration;
 import com.sp.allinone.persistance.dao.UserDao;
 import com.sp.allinone.persistance.model.Role;
@@ -20,6 +21,8 @@ import java.util.List;
 @Repository
 public class UserDaoImpl extends BasicDAO<User> implements UserDao {
 
+    private  DataSetParameter dataSetParameter;
+
     public UserDaoImpl() {
         super();
 
@@ -33,9 +36,19 @@ public class UserDaoImpl extends BasicDAO<User> implements UserDao {
         super(spUser);
     }
 
+    public UserDaoImpl(DataSetParameter dataSetParameter) {
+        super(dataSetParameter);
+        this.dataSetParameter = dataSetParameter;
+    }
+
     @Override
     public Class getModelClass() {
         return User.class;
+    }
+
+    public void save(User user) {
+
+        super.save(user);
     }
 
 
@@ -62,6 +75,12 @@ public class UserDaoImpl extends BasicDAO<User> implements UserDao {
         user.setRoles(roles);
         return user;
     }
+
+    @Override public Boolean createUser(User user) {
+      return   super.save(user);
+    }
+
+
 
 
 }

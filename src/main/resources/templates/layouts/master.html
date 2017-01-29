@@ -7,12 +7,15 @@
             rel="stylesheet" media="screen"/>
     <link href="../../static/css/core.css" th:href="@{/css/core.css}" rel="stylesheet" media="screen"/>
     <link href="../../static/css/core.css" th:href="@{/css/style.css}" rel="stylesheet" media="screen"/>
+    <link href="../../static/css/core.css" th:href="@{/css/custom-sky-forms.css}" rel="stylesheet" media="screen"/>
+    <link href="../../static/css/core.css" th:href="@{/css/sky-forms.css}" rel="stylesheet" media="screen"/>
+    <link th:href="@{/fontAwesome/css/font-awesome.min.css}" rel="stylesheet" media="screen"/>
     <script src="http://cdn.jsdelivr.net/webjars/jquery/2.2.1/jquery.min.js"
             th:src="@{/webjars/jquery/2.2.1/jquery.min.js}"
     content="application/javascript"></script>
 
-    <script content="application/javascript"
-            th:src="@{/webjars/bootstrap/3.3.6/js/bootstrap.min.js}"></script>
+    <script content="application/javascript" th:src="@{/webjars/bootstrap/3.3.6/js/bootstrap.min.js}"></script>
+    <script content="application/javascript" th:src="@{/js/docs.js}"></script>
 </head>
 
 <body>
@@ -20,13 +23,13 @@
 </div>
 <div class="container">
 <div class="row" style="margin-top: 70px">
-    <div class="col-md-3">
+    <div class="col-md-4">
 
         <div th:replace="fragments/sidebar ::sidebar">
 
         </div>
     </div>
-    <div class="col-md-9">
+    <div class="col-md-8">
         <div th:replace="${view} :: content">
             Content
         </div>

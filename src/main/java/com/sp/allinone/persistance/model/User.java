@@ -1,6 +1,7 @@
 package com.sp.allinone.persistance.model;
 
 import com.sp.allinone.common.Model;
+import com.sp.allinone.config.persistance.annotation.Column;
 import com.sp.allinone.config.persistance.annotation.Table;
 
 import java.io.Serializable;
@@ -29,7 +30,9 @@ public class User extends Model implements Serializable {
         this.roles = roles;
     }
 
+//    @Column("")
     private int id;
+    private int status =1;
     private String username;
 
     public String getPassword() {

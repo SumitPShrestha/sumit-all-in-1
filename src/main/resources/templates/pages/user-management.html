@@ -1,0 +1,324 @@
+<div class="row" xmlns:th="http://www.thymeleaf.org"
+     th:fragment="content">
+    <div class="">
+
+
+
+        <div class="col-md-12">
+            <!-- General Unify Forms -->
+            <form action="#" class="sky-form"
+                  th:action="@{/user-management/create-user}" method="post" th:if="${createUser}">
+                <header>User Regestrtion Form</header>
+                <fieldset th:object="${userProfile}">
+                    <div class="row">
+
+                    <section class="col-md-6">
+                        <label class="label">First Name</label>
+                        <label class="input">
+                            <input type="text"
+                                   th:field="${userProfile.firstName}"/>
+                        </label>
+                    </section>
+
+                    <section class="col-md-6">
+                        <label class="label">Last Name</label>
+                        <label class="input">
+                            <input type="text"
+                                   th:field="${userProfile.lastName}"/>
+                        </label>
+                    </section>
+                    </div>
+
+                    <section>
+                        <label class="label">E-mail</label>
+                        <label class="input">
+                            <input type="text" th:field="${userProfile.email}"/>
+                        </label>
+                    </section>
+
+                    <section th:if="${highestAuthoritiy != 'ROLE_SUPERADMIN'}">
+                        <label class="label">Profile Picture</label>
+                        <label for="file" class="input input-file">
+                            <div class="button">
+                                <input type="file" id="file"
+                                       onchange="this.parentNode.nextSibling.value = this.value"/>
+                                Browse
+                            </div>
+                            <input type="text" readonly=""/>
+                        </label>
+                    </section>
+
+
+                </fieldset>
+
+                <fieldset th:object="${user}">
+                    <section>
+                        <label class="label">User Name</label>
+                        <label class="input">
+                            <input type="text" th:field="${user.username}"/>
+                        </label>
+                    </section>
+
+                    <section>
+                        <label class="label">Password</label>
+                        <label class="input">
+                            <input type="text" th:field="${user.password}"/>
+                        </label>
+                    </section>
+
+                    <section>
+                        <label class="label">Repete Password</label>
+                        <label class="input">
+                            <input type="text"/>
+                        </label>
+                    </section>
+
+                    <section>
+                        <label class="label">User Roles</label>
+                        <div class="inline-group">
+                            <label >
+                                <input id="super-admin" type="checkbox" th:field="${user.roles[1].role}"  th:value="${'ROLE_SUPERADMIN'}" checked=""/>
+                                <i></i>Super Admin</label>
+                            <label >
+                                <input id="client-admin" type="checkbox"   th:field="${user.roles[2].role}" th:value="${'ROLE_CLIENTADMIN'}"
+                                                          /><i></i>Client Admin</label>
+                            <label >
+                                <input id="app-admin" type="checkbox" th:field="${user.roles[3].role}" th:value="${'ROLE_APPADMIN'}"
+                                                          /><i></i>App Admin</label>
+                            <label  >
+                                <input type="checkbox" id="employee" th:field="${user.roles[4].role}" th:value="${'ROLE_EMPLOYEE'}"
+                                                          /><i></i>Employee</label>
+                        </div>
+                    </section>
+                </fieldset>
+
+                <fieldset id='client-info' th:object="${clientInfo}">
+                    <div class="row">
+
+                        <section class="col-md-6">
+                            <label class="label">Client Name</label>
+                            <label class="input">
+                                <input type="text"
+                                       th:field="${clientInfo.name}"/>
+                            </label>
+                        </section>
+
+                        <section class="col-md-6">
+                            <label class="label">Client Address</label>
+                            <label class="input">
+                                <input type="text" disabled="" />
+                                       <!--th:field="${clientInfo.address}"-->
+                            </label>
+                        </section>
+                    </div>
+
+                    <section>
+                        <label class="label">Client E-mail</label>
+                        <label class="input">
+                            <input type="text" disabled="" />
+                            <!--th:field="${clientInfo.email}"-->
+                        </label>
+                    </section>
+
+                  <!--  <section th:if="${highestAuthoritiy != 'ROLE_SUPERADMIN'}">
+                        <label class="label">Profile Picture</label>
+                        <label for="file" class="input input-file">
+                            <div class="button">
+                                <input type="file" id="file"
+                                       onchange="this.parentNode.nextSibling.value = this.value"/>
+                                Browse
+                            </div>
+                            <input type="text" readonly=""/>
+                        </label>
+                    </section>
+-->
+
+                </fieldset>
+
+                <!--
+
+                                <fieldset>
+                                    <section>
+                                        <label class="label">Inline checkboxes</label>
+                                        <div class="inline-group">
+                                            <label class="checkbox"><input type="checkbox" name="checkbox-inline" checked=""><i></i>Alexandra</label>
+                                            <label class="checkbox"><input type="checkbox" name="checkbox-inline"><i></i>Alice</label>
+                                            <label class="checkbox"><input type="checkbox" name="checkbox-inline"><i></i>Anastasia</label>
+                                            <label class="checkbox"><input type="checkbox" name="checkbox-inline"><i></i>Avelina</label>
+                                            <label class="checkbox"><input type="checkbox" name="checkbox-inline"><i></i>Beatrice</label>
+                                        </div>
+                                    </section>
+                                </fieldset>
+
+                                <fieldset>
+                                    <section>
+                                        <label class="label">Columned checkboxes</label>
+                                        <div class="row">
+                                            <div class="col col-4">
+                                                <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i></i>Alexandra</label>
+                                                <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Alice</label>
+                                                <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Anastasia</label>
+                                            </div>
+                                            <div class="col col-4">
+                                                <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Avelina</label>
+                                                <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Basilia</label>
+                                                <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Beatrice</label>
+                                            </div>
+                                            <div class="col col-4">
+                                                <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Cassandra</label>
+                                                <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Clemencia</label>
+                                                <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Desiderata</label>
+                                            </div>
+                                        </div>
+                                    </section>
+
+                                    <section>
+                                        <label class="label">Inline checkboxes</label>
+                                        <div class="inline-group">
+                                            <label class="checkbox"><input type="checkbox" name="checkbox-inline" checked=""><i></i>Alexandra</label>
+                                            <label class="checkbox"><input type="checkbox" name="checkbox-inline"><i></i>Alice</label>
+                                            <label class="checkbox"><input type="checkbox" name="checkbox-inline"><i></i>Anastasia</label>
+                                            <label class="checkbox"><input type="checkbox" name="checkbox-inline"><i></i>Avelina</label>
+                                            <label class="checkbox"><input type="checkbox" name="checkbox-inline"><i></i>Beatrice</label>
+                                        </div>
+                                    </section>
+                                </fieldset>
+
+                                <fieldset>
+                                    <div class="row">
+                                        <section class="col col-5">
+                                            <label class="label">Toggles based on radios</label>
+                                            <label class="toggle"><input type="radio" name="radio-toggle" checked=""><i class="rounded-4x"></i>Alexandra</label>
+                                            <label class="toggle"><input type="radio" name="radio-toggle"><i class="rounded-4x"></i>Anastasia</label>
+                                            <label class="toggle"><input type="radio" name="radio-toggle"><i class="rounded-4x"></i>Avelina</label>
+                                        </section>
+
+                                        <div class="col col-2"></div>
+
+                                        <section class="col col-5">
+                                            <label class="label">Toggles based on checkboxes</label>
+                                            <label class="toggle"><input type="checkbox" name="checkbox-toggle" checked=""><i class="rounded-4x"></i>Cassandra</label>
+                                            <label class="toggle"><input type="checkbox" name="checkbox-toggle"><i class="rounded-4x"></i>Clemencia</label>
+                                            <label class="toggle"><input type="checkbox" name="checkbox-toggle"><i class="rounded-4x"></i>Desiderata</label>
+                                        </section>
+                                    </div>
+                                </fieldset>
+
+                                <fieldset>
+                                    <div class="row">
+                                        <section class="col col-5">
+                                            <label class="label">Toggles based on radios</label>
+                                            <label class="toggle"><input type="radio" name="radio-toggle-1" checked=""><i></i>JavaScript</label>
+                                            <label class="toggle"><input type="radio" name="radio-toggle-1"><i></i>CSS3/HTML5</label>
+                                            <label class="toggle"><input type="radio" name="radio-toggle-1"><i></i>Bootstrap</label>
+                                        </section>
+
+                                        <div class="col col-2"></div>
+
+                                        <section class="col col-5">
+                                            <label class="label">Toggles based on checkboxes</label>
+                                            <label class="toggle"><input type="checkbox" name="checkbox-toggle-1" checked=""><i></i>Canada</label>
+                                            <label class="toggle"><input type="checkbox" name="checkbox-toggle-1"><i></i>USA</label>
+                                            <label class="toggle"><input type="checkbox" name="checkbox-toggle-1"><i></i>Russia</label>
+                                        </section>
+                                    </div>
+                                </fieldset>
+
+                                <fieldset>
+                                    <section>
+                                        <label class="label">Ratings with different icons</label>
+                                        <div class="rating">
+                                            <input type="radio" name="stars-rating" id="stars-rating-5">
+                                            <label for="stars-rating-5"><i class="fa fa-star"></i></label>
+                                            <input type="radio" name="stars-rating" id="stars-rating-4">
+                                            <label for="stars-rating-4"><i class="fa fa-star"></i></label>
+                                            <input type="radio" name="stars-rating" id="stars-rating-3">
+                                            <label for="stars-rating-3"><i class="fa fa-star"></i></label>
+                                            <input type="radio" name="stars-rating" id="stars-rating-2">
+                                            <label for="stars-rating-2"><i class="fa fa-star"></i></label>
+                                            <input type="radio" name="stars-rating" id="stars-rating-1">
+                                            <label for="stars-rating-1"><i class="fa fa-star"></i></label>
+                                            Stars
+                                        </div>
+
+                                        <div class="rating">
+                                            <input type="radio" name="trophies-rating" id="trophies-rating-7">
+                                            <label for="trophies-rating-7"><i class="fa fa-trophy"></i></label>
+                                            <input type="radio" name="trophies-rating" id="trophies-rating-6">
+                                            <label for="trophies-rating-6"><i class="fa fa-trophy"></i></label>
+                                            <input type="radio" name="trophies-rating" id="trophies-rating-5">
+                                            <label for="trophies-rating-5"><i class="fa fa-trophy"></i></label>
+                                            <input type="radio" name="trophies-rating" id="trophies-rating-4">
+                                            <label for="trophies-rating-4"><i class="fa fa-trophy"></i></label>
+                                            <input type="radio" name="trophies-rating" id="trophies-rating-3">
+                                            <label for="trophies-rating-3"><i class="fa fa-trophy"></i></label>
+                                            <input type="radio" name="trophies-rating" id="trophies-rating-2">
+                                            <label for="trophies-rating-2"><i class="fa fa-trophy"></i></label>
+                                            <input type="radio" name="trophies-rating" id="trophies-rating-1">
+                                            <label for="trophies-rating-1"><i class="fa fa-trophy"></i></label>
+                                            Trophies
+                                        </div>
+
+                                        <div class="rating">
+                                            <input type="radio" name="asterisks-rating" id="asterisks-rating-10">
+                                            <label for="asterisks-rating-10"><i class="fa fa-asterisk"></i></label>
+                                            <input type="radio" name="asterisks-rating" id="asterisks-rating-9">
+                                            <label for="asterisks-rating-9"><i class="fa fa-asterisk"></i></label>
+                                            <input type="radio" name="asterisks-rating" id="asterisks-rating-8">
+                                            <label for="asterisks-rating-8"><i class="fa fa-asterisk"></i></label>
+                                            <input type="radio" name="asterisks-rating" id="asterisks-rating-7">
+                                            <label for="asterisks-rating-7"><i class="fa fa-asterisk"></i></label>
+                                            <input type="radio" name="asterisks-rating" id="asterisks-rating-6">
+                                            <label for="asterisks-rating-6"><i class="fa fa-asterisk"></i></label>
+                                            <input type="radio" name="asterisks-rating" id="asterisks-rating-5">
+                                            <label for="asterisks-rating-5"><i class="fa fa-asterisk"></i></label>
+                                            <input type="radio" name="asterisks-rating" id="asterisks-rating-4">
+                                            <label for="asterisks-rating-4"><i class="fa fa-asterisk"></i></label>
+                                            <input type="radio" name="asterisks-rating" id="asterisks-rating-3">
+                                            <label for="asterisks-rating-3"><i class="fa fa-asterisk"></i></label>
+                                            <input type="radio" name="asterisks-rating" id="asterisks-rating-2">
+                                            <label for="asterisks-rating-2"><i class="fa fa-asterisk"></i></label>
+                                            <input type="radio" name="asterisks-rating" id="asterisks-rating-1">
+                                            <label for="asterisks-rating-1"><i class="fa fa-asterisk"></i></label>
+                                            Asterisks
+                                        </div>
+                                        <div class="note"><strong>Note:</strong> you can use more than 350 icons for rating <a target="_blank" href="http://fortawesome.github.io/Font-Awesome">http://fortawesome.github.io/Font-Awesome</a></div>
+                                    </section>
+                                </fieldset>
+                -->
+
+                <footer>
+                    <button type="submit" class="btn-u">Submit</button>
+                    <button type="button" class="btn-u btn-u-default"
+                            onclick="window.history.back();">Back
+                    </button>
+                </footer>
+            </form>
+
+            <table class="table table-striped" th:if="${!createUser}" >
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>First Name</th>
+                    <th class="hidden-sm">Last Name</th>
+                    <th>Username</th>
+                    <th>Status</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="user : ${users.dto}">
+                    <td th:text="${user.id}"></td>
+                    <td th:text="${user.username}">Mark</td>
+                    <td th:text="${user.password}">Otto</td>
+                        <td><span class="label label-warning">Expiring</span></td>
+                </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>
+<style>
+
+</style>
